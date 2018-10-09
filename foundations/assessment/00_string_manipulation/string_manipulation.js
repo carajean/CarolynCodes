@@ -8,25 +8,40 @@
  * @param  {String} str [description]
  * @return {[type]}     [description]
  */
-var vowelsCount = function(str) {
-	var vowelArray = ['a', 'e', 'i', 'o', 'u'];
-	var count = 0;
-	for (var letter in vowelArray) {
-		for (var i in str) {
-			if (vowelArray[letter] === str[i].toLowerCase()) {
-				count += 1;
-			}
-		}
-	}
-	return count;
-};
-
-// Alternate Solution
 
 function vowelsCount(str) {
-	var answer = str.match(/[aeiou]/gi); // i allows you to ignore case
-	if (answer === null) { // takes care of null spec
-		return 0;
-	}
-	return answer.length;
+	let letters = str.split('');
+	return letters
+		.filter(e => e.match(/[aeiou]/gi))
+		.length;
 }
+
+console.log(vowelsCount("Riley Roo"));
+
+
+
+
+
+
+// var vowelsCount = function(str) {
+// 	var vowelArray = ['a', 'e', 'i', 'o', 'u'];
+// 	var count = 0;
+// 	for (var letter in vowelArray) {
+// 		for (var i in str) {
+// 			if (vowelArray[letter] === str[i].toLowerCase()) {
+// 				count += 1;
+// 			}
+// 		}
+// 	}
+// 	return count;
+// };
+
+// // Alternate Solution
+
+// function vowelsCount(str) {
+// 	var answer = str.match(/[aeiou]/gi); // i allows you to ignore case
+// 	if (answer === null) { // takes care of null spec
+// 		return 0;
+// 	}
+// 	return answer.length;
+// }
